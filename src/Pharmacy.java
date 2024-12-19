@@ -1,13 +1,10 @@
-public class Pharmacy implements Runnable, RandomCount, RandomDrug, Waiter { //создаем класс Аптека, который реализует ряд интерфейсов
-    @Override //аннотация, которая говорит, что мы переопределяем данный метод
-    public void run() { //обязательный(т.к. мы реализуем интерфейс Runnable) к переопределению метод с логикой для выполнения
-        // в потоке, который будет создан и запущен для обьекта данного класса
-        while (!Main.isStopped) { //создаем цикл с условием (пока isStopped = false)
-            Main.drugsController.sell(getRandomDrug(), getRandomCount()); //для статического(одно на всех) обьекта, который
-            //находится в классе Main, вызываем метод продать(аргументами конструктора выступают дефолтные(реализованные) методы
-            //интерфейсов, которые мы реализуем)
-            waitAMoment();//вызываем дефолтный(реализованный) метод интерфейса Waiter, который усыпляет метод на 0,1 секунды
-            waitAMoment();//вызываем дефолтный(реализованный) метод интерфейса Waiter, который усыпляет метод на 0,1 секунды
+public class Pharmacy implements Runnable, RandomCount, RandomDrug, Waiter { 
+    @Override
+    public void run() {
+        while (!Main.isStopped) {
+            Main.drugsController.sell(getRandomDrug(), getRandomCount());
+            waitAMoment();
+            waitAMoment();
         }
     }
 }

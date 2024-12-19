@@ -1,8 +1,7 @@
-public class Drug { //создали публичный класс Лекарство
-    private String name; //поле класса - название лекарства
-    private String description; //поле класса - описание лекарства
+public class Drug { 
+    private String name;
+    private String description;
 
-    //Геттеры и Сеттеры для наших полей
     public String getName() {
         return name;
     }
